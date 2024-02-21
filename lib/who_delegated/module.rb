@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# reopen Module from ActiveSupport to redefine delegate method
 class Module
   alias __delegate delegate
   def delegate(*methods, to: nil, prefix: nil, allow_nil: nil, private: nil)
