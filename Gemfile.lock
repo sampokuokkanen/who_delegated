@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    who_delegated (0.2.0)
+    who_delegated (0.3.0)
       rails (>= 7.0)
 
 GEM
