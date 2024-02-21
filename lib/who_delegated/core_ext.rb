@@ -7,7 +7,7 @@ class Module
     if defined?(ActiveRecord::Base) && self < ActiveRecord::Base
       methods.each do |method|
         define_method("delegated_#{prefix}#{method}?") do
-          true
+          to
         end
       end
     end

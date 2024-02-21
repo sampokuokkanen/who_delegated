@@ -15,4 +15,10 @@ class WhoDelegatedTest < ActiveSupport::TestCase
     assert u.delegated_friend_name?, true
     assert u.delegated_method?(:friend_name), true
   end
+
+  test "it is possible to get delegated target" do
+    f = Friend.new
+    u = User.new(friend: f)
+    assert u.delegated_target(:friend_name), :friend
+  end
 end
