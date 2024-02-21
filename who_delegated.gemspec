@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["Sampo Kuokkanen"]
   spec.email       = ["sampo.kuokkanen@gmail.com"]
   spec.homepage    = "https://github.com/sampokuokkanen/who_delegated"
-  spec.summary     = "Find out if a method was delegated to an object."
-  spec.description = "Was your method delegated? Or not? That is the question. So find out with this gem!"
+  spec.summary     = "Rails: Find out if a method was delegated to an object."
+  spec.description = "Was your Rails method delegated? Or not? That is the question. So find out with this gem!"
   spec.license     = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
 

@@ -1,6 +1,8 @@
 # who_delegated
 This gem is a simple tool to help you find out if a method is delegated or not. My use case for it is when creating SQL queries, I want to find out whether the method is a delegated one, as we have some special logic for those cases.
 
+Only works on ActiveRecord models, as I only need it there to find out if a method is backed by a column or not, and also figure out if it is a method on the object or if it's delegated.
+
 ## Usage
 The gem adds the method 'delegated?' to the ActiveRecord::Base. You can use it like this:
 
