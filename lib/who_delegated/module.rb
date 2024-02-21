@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Module
+class ::Module
   alias __delegate delegate
   def delegate(*methods, to: nil, prefix: nil, allow_nil: nil, private: nil)
     if defined?(ActiveRecord::Base) && self < ActiveRecord::Base
