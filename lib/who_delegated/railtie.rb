@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
+require "who_delegated/active_record_extension"
 require "module"
-require "activerecord/base"
-
 module WhoDelegated
   class Railtie < ::Rails::Railtie
   end
