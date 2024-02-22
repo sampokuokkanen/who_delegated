@@ -2,6 +2,7 @@
 
 # reopen ActiveRecord::Base to add delegated_method? method
 module WhoDelegated
+  # Extend ActiveRecord::Base with delegated_method? method
   module ActiveRecordExtension
     def delegated_method?(method_name)
       respond_to?("delegated_#{method_name}?") && send("delegated_#{method_name}?")
@@ -15,4 +16,4 @@ module WhoDelegated
   end
 end
 
-ActiveRecord::Base.send(:include, WhoDelegated::ActiveRecordExtension)
+ActiveRecord::Base.include WhoDelegated::ActiveRecordExtension
