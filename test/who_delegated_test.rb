@@ -29,7 +29,9 @@ class WhoDelegatedTest < ActiveSupport::TestCase
   end
 
   test "singleton methods" do
-    assert User.respond_to?(:delegated_friend_name?)
-    assert User.respond_to?(:delegated_friend_very_good_name?)
+    assert User.respond_to?(:delegated_friend_name?), true
+    assert User.respond_to?(:delegated_friend_very_good_name?), true
+    assert User.delegated_method?(:friend_name), true
+    assert User.delegated_target(:friend_very_good_name), :friend
   end
 end

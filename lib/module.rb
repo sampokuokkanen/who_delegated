@@ -8,7 +8,7 @@ class Module
       methods.each do |method|
         method_name = "delegated_#{"#{prefix == true ? to : prefix}_" if prefix}#{method}?"
         define_singleton_method(method_name) do
-          respond_to?(method)
+          to
         end
         define_method(method_name) do
           to

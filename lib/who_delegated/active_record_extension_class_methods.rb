@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-# reopen ActiveRecord::Base to add delegated_method? method
 module WhoDelegated
-  # Extend ActiveRecord::Base with delegated_method? method
-  module ActiveRecordExtension
+  module ActiveRecordExtensionClassMethods
     def delegated_method?(method_name)
       respond_to?("delegated_#{method_name}?") && send("delegated_#{method_name}?")
     end
@@ -16,5 +14,4 @@ module WhoDelegated
   end
 end
 
-ActiveRecord::Base.include WhoDelegated::ActiveRecordExtension
 ActiveRecord::Base.extend WhoDelegated::ActiveRecordExtensionClassMethods

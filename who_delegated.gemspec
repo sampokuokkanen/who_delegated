@@ -22,5 +22,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", ">= 7.0"
+  # rubocop:disable Gemspec/RequireMFA
   spec.metadata["rubygems_mfa_required"] = "false"
+  # rubocop:enable Gemspec/RequireMFA
 end
