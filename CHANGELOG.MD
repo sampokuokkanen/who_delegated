@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.4.1] - 26th February 2024
+## [0.5.1] - 26th February 2024
 
 - Forgot to add class methods to ActiveRecord extension. Added now.
 
