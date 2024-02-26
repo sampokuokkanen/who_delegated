@@ -17,16 +17,19 @@ class WhoDelegatedTest < ActiveSupport::TestCase
   end
 
   test "it is possible to get delegated target" do
-    f = Friend.new
-    u = User.new(friend: f)
+    u = User.new
     assert u.delegated_target(:friend_name), :friend
   end
 
   test "works with preifx" do
-    f = Friend.new
-    u = User.new(friend: f)
+    u = User.new
     assert u.delegated_friend_very_good_name?, true
     assert u.delegated_method?(:friend_very_good_name), true
     assert u.delegated_target(:friend_very_good_name), :friend
+  end
+
+  test "singleton methods" do
+    assert User.respond_to?(:delegated_friend_name?)
+    assert User.respond_to?(:delegated_friend_very_good_name?)
   end
 end

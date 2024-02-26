@@ -6,7 +6,11 @@ class Module
   def delegate(*methods, to: nil, prefix: nil, allow_nil: nil, private: nil)
     if defined?(ActiveRecord::Base) && self < ActiveRecord::Base
       methods.each do |method|
-        define_method("delegated_#{"#{prefix == true ? to : prefix}_" if prefix}#{method}?") do
+        method_name = "delegated_#{"#{prefix == true ? to : prefix}_" if prefix}#{method}?"
+        define_singleton_method(method_name) do
+          respond_to?(method)
+        end
+        define_method(method_name) do
           to
         end
       end
